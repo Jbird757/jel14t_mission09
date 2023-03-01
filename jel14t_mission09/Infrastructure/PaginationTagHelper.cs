@@ -26,6 +26,10 @@ namespace jel14t_mission09.Infrastructure
         public ViewContext vc { get; set; }
         public PageInfo PageInfoFromView { get; set; }
         public string PageAction { get; set; }
+        public bool PageClassesEnabled { get; set; } = false;
+        public string PageClass { get; set; }
+        public string PageClassNormal { get; set; }
+        public string PageClassSelected { get; set; }
 
         public override void Process (TagHelperContext thc, TagHelperOutput tho)
         {
@@ -33,10 +37,16 @@ namespace jel14t_mission09.Infrastructure
 
             TagBuilder final = new TagBuilder("div");
 
-            for (int i = 0; i < PageInfoFromView.TotalPages; i++)
+            for (int i = 1; i < PageInfoFromView.TotalPages+1; i++)
             {
                 TagBuilder tb = new TagBuilder("a");
                 tb.Attributes["href"] = uh.Action(PageAction, new { pageNum = i });
+                if (PageClassesEnabled)
+                {
+                    tb.AddCssClass(PageClass);
+                    tb.AddCssClass(i == PageInfoFromView.CurrentPage
+                        ? PageClassSelected : PageClassNormal);
+                }
                 tb.InnerHtml.Append(i.ToString());
 
                 final.InnerHtml.AppendHtml(tb);

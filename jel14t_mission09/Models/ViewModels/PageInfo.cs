@@ -10,6 +10,6 @@ namespace jel14t_mission09.Models.ViewModels
         public int TotalEntries { get; set; }
         public int EntriesPerPage { get; set; }
         public int CurrentPage { get; set; }
-        public int TotalPages => (int) Math.Ceiling((double)(TotalEntries / EntriesPerPage));
+        public int TotalPages => (int) Math.Ceiling(((double)TotalEntries / EntriesPerPage));
     }
 }
