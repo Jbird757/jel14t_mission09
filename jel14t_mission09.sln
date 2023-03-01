@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33214.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jel14t_mission09", "jel14t_mission09\jel14t_mission09.csproj", "{CDDAD9FE-078D-4FA0-A2D4-F7CC449401D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDDAD9FE-078D-4FA0-A2D4-F7CC449401D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDDAD9FE-078D-4FA0-A2D4-F7CC449401D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDDAD9FE-078D-4FA0-A2D4-F7CC449401D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDDAD9FE-078D-4FA0-A2D4-F7CC449401D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9219EF7-1D2B-43D9-A0AB-9CE9BBA148AE}
+	EndGlobalSection
+EndGlobal

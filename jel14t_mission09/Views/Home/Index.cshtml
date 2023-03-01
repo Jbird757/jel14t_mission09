@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model BooksViewModel
+
+<div class="text-center">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Category</th>
+                <th scope="col">Year Released</th>
+                <th scope="col">Director</th>
+                <th scope="col">Rating</th>
+                <th scope="col">Edited</th>
+                <th scope="col">Lent To</th>
+                <th scope="col">Notes</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entry in Model.Books)
+            {
+                <tr>
+                    <th scope="row">@entry.Title</th>
+                    <td>@entry.Author</td>
+                    <td>@entry.Publisher</td>
+                    <td>@entry.Isbn</td>
+                    <td>@entry.Classification</td>
+                    <td>@entry.Category</td>
+                    <td>@entry.PageCount</td>
+                    <td>@entry.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div page-info-from-view="@Model.PageInfo" page-action="Index">
+
+    </div>
+
+    <!--<a asp-action="Index" asp-route-x="1">1</a>-->
+</div>
