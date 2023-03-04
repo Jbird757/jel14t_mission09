@@ -23,20 +23,21 @@ namespace jel14t_mission09.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index(int pageNum = 1)
+        public IActionResult Index(int pageNum = 1, string bookCategory = null)
         {
             int pageSize = 10;
 
             var foo = new BooksViewModel
             {
                 Books = repo.Books
+                    .Where(x => x.Category == bookCategory || bookCategory == null)
                     .OrderBy(x => x.Title)
                     .Skip((pageNum-1) * pageSize)
                     .Take(pageSize),
 
                 PageInfo = new PageInfo
                 {
-                    TotalEntries = repo.Books.Count(),
+                    TotalEntries = (bookCategory == null ? repo.Books.Count() : repo.Books.Where(x => x.Category == bookCategory).Count()),
                     EntriesPerPage = pageSize,
                     CurrentPage = pageNum
                 }

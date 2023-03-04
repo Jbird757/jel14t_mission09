@@ -1,0 +1,17 @@
+﻿@{
+}
+
+
+@model IEnumerable<string>
+
+
+<div class="d-grid gap-2">
+    <a asp-controller="Home" asp-action="Index" asp-route-pageNum="1" asp-route-bookCategory="" 
+       class="btn btn-block btn-dark" style="@(ViewBag.Selected == null ? "visibility : hidden" : "")">Clear Filter</a>
+
+    @foreach (string t in Model)
+    {
+        <a asp-controller="Home" asp-action="Index" asp-route-pageNum="1" asp-route-bookCategory="@t" 
+           class="btn btn-block @(ViewBag.Selected == t ? "btn-primary" : "btn-outline-secondary")">@t</a>
+    }
+</div>
