@@ -20,6 +20,7 @@ namespace jel14t_mission09.Models
         }
 
         virtual public DbSet<Book> Books { get; set; }
+        virtual public DbSet<Checkout> Checkout { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
